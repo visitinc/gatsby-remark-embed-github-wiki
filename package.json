@@ -123,7 +123,7 @@
       "no-dupe-class-members": "off",
       "quotes": [
         "error",
-        "double",
+        "single",
         {
           "avoidEscape": true
         }
