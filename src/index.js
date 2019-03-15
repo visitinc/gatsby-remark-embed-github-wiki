@@ -65,7 +65,6 @@ export default async ({ markdownAST }, options = {}) => {
 
     // get the query string and build the url
     const url = buildUrl(node.value.substring(PREFIX.length), options);
-    console.log(url);
 
     // get the markdown content and update the node type and value
     const body = await request(url);
