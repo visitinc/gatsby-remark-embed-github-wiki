@@ -3,7 +3,8 @@
 [![NPM badge](https://img.shields.io/npm/v/gatsby-remark-embed-github-wiki.svg?style=flat-square)](https://www.npmjs.com/package/gatsby-remark-embed-github-wiki)
 [![Travis badge](https://img.shields.io/travis/ptsteadman/gatsby-remark-embed-github-wiki.svg?branch=master&style=flat-square)](https://travis-ci.org/ptsteadman/gatsby-remark-embed-github-wiki)
 
-This plugin allows content authors to embed public GitHub wiki markdown.
+This plugin allows content authors to embed public GitHub wiki into markdown
+files.
 
 ## Getting started
 
