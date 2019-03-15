@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "name": "gatsby-remark-embed-github-wiki",
   "description": "Gatsby remark github wiki preprocessor for embedding wiki content",
   "author": {
@@ -64,9 +64,16 @@
     "async-unist-util-visit": "^1.0.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "cheerio": "^1.0.0-rc.2",
+    "html-whitespace-sensitive-tag-names": "^1.0.0",
     "parse-numeric-range": "^0.0.2",
+    "rehype-format": "^2.3.1",
+    "rehype-stringify": "^5.0.0",
+    "remark-html": "^9.0.0",
+    "remark-parse": "^6.0.3",
+    "remark-rehype": "^4.0.0",
     "request": "^2.88.0",
-    "request-promise": "^4.2.2"
+    "request-promise": "^4.2.2",
+    "unified": "^7.1.0"
   },
   "peerDependencies": {
     "gatsby": "*",

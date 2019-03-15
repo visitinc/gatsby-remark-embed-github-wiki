@@ -8,7 +8,7 @@ const getNodeContent = node => node.children[0].children[0];
 describe("gatsby-remark-embed-github-wiki", () => {
   it("generates html with username, repo and page", async () => {
     const markdownAST = remark.parse(
-      "`gh-wiki:visitinc/visitinc.github.io#Index-Copy`"
+      "`gh-wiki:visitinc/visitinc.github.io/Index-Copy`"
     );
 
     const processed = await plugin({ markdownAST });
@@ -31,7 +31,7 @@ describe("gatsby-remark-embed-github-wiki", () => {
 
   it("inline username and repo overrides configuration", async () => {
     const markdownAST = remark.parse(
-      "`gh-wiki:visitinc/visitinc.github.io#Index-Copy`"
+      "`gh-wiki:visitinc/visitinc.github.io/Index-Copy`"
     );
 
     const processed = await plugin({ markdownAST }, { username: "john" });

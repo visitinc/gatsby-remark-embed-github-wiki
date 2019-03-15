@@ -1,9 +1,13 @@
 import request from "request-promise";
 import visit from "async-unist-util-visit";
+import unified from "unified";
+import markdown from "remark-parse";
+import stringify from "rehype-stringify";
+import remark2rehype from "remark-rehype";
 
 // default base url
 const BASE_URL = "https://raw.github.com/wiki";
-const PREFIX = "gh-wiki";
+const PREFIX = "gh-wiki:";
 
 /**
  * Builds the github wiki url.
@@ -11,30 +15,32 @@ const PREFIX = "gh-wiki";
  * @param {PluginOptions} options the options of the plugin.
  */
 function buildUrl(value, options) {
-  const [usernameAndRepo, page] = value.split(/[#]/);
+  const slugs = value.split("/");
 
-  const [inlineUsername, inlineRepo] =
-    usernameAndRepo && usernameAndRepo.split("/")
-      ? usernameAndRepo.split("/")
-      : [null, null];
+  let username, repo, page;
 
-  // username can come from inline code or options
-  const username = inlineUsername || options.username;
-  // repo can come from inline code or options
-  const repo = inlineRepo || options.repo;
+  if (slugs.length === 3) {
+    [username, repo, page] = slugs;
+  }
+
+  if (slugs.length === 1) {
+    [page] = slugs;
+    username = options.username;
+    repo = options.repo;
+  }
 
   // checks for a valid username
   if (
-    username == null ||
+    !username ||
     username.trim().length === 0 ||
-    repo === null ||
+    !repo ||
     repo.trim().length === 0
   ) {
     throw new Error("Missing username or repo information");
   }
 
   // checks for a valid page
-  if (page == null || page.trim().length === 0) {
+  if (!page == null || page.trim().length === 0) {
     throw new Error("Missing page information");
   }
 
@@ -59,12 +65,19 @@ export default async ({ markdownAST }, options = {}) => {
 
     // get the query string and build the url
     const url = buildUrl(node.value.substring(PREFIX.length), options);
+    console.log(url);
 
     // get the markdown content and update the node type and value
     const body = await request(url);
 
+    const html = await unified()
+      .use(markdown)
+      .use(remark2rehype)
+      .use(stringify)
+      .process(body);
+
     node.type = "html";
-    node.value = body.trim();
+    node.value = html.contents.trim();
 
     return markdownAST;
   });

@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`gatsby-remark-embed-github-wiki generates html with default username and repo 1`] = `
+Object {
+  "position": Position {
+    "end": Object {
+      "column": 21,
+      "line": 1,
+      "offset": 20,
+    },
+    "indent": Array [],
+    "start": Object {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "html",
+  "value": "<p>Studio Visit App is:</p>
+<ul>
+<li>a slick but informal scheduling tool</li>
+<li>a place to document and share your work</li>
+<li>an index of practices searchable by location, medium, gender, allergy, discourse, and more</li>
+<li>a federation of safe, user-moderated communities </li>
+</ul>",
+}
+`;
+
+exports[`gatsby-remark-embed-github-wiki generates html with username, repo and page 1`] = `
+Object {
+  "position": Position {
+    "end": Object {
+      "column": 49,
+      "line": 1,
+      "offset": 48,
+    },
+    "indent": Array [],
+    "start": Object {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "html",
+  "value": "<p>Studio Visit App is:</p>
+<ul>
+<li>a slick but informal scheduling tool</li>
+<li>a place to document and share your work</li>
+<li>an index of practices searchable by location, medium, gender, allergy, discourse, and more</li>
+<li>a federation of safe, user-moderated communities </li>
+</ul>",
+}
+`;
+
+exports[`gatsby-remark-embed-github-wiki inline username and repo overrides configuration 1`] = `
+Object {
+  "position": Position {
+    "end": Object {
+      "column": 49,
+      "line": 1,
+      "offset": 48,
+    },
+    "indent": Array [],
+    "start": Object {
+      "column": 1,
+      "line": 1,
+      "offset": 0,
+    },
+  },
+  "type": "html",
+  "value": "<p>Studio Visit App is:</p>
+<ul>
+<li>a slick but informal scheduling tool</li>
+<li>a place to document and share your work</li>
+<li>an index of practices searchable by location, medium, gender, allergy, discourse, and more</li>
+<li>a federation of safe, user-moderated communities </li>
+</ul>",
+}
+`;

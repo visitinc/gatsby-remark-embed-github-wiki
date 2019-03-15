@@ -1,5 +1,3 @@
-# Hello
-
 Studio Visit App is:
 - a slick but informal scheduling tool
 - a place to document and share your work
