@@ -52,6 +52,9 @@ The order of the plugins only matters when used in conjunction with
 `gatsby-remark-prismjs`, because this plugin transforms the inline code blocks, 
 so add `gatsby-remark-embed-github-wiki` somewhere above this plugin.  
 
+Any GitHub user can modify GitHub wikis, be careful when setting innerHTML based
+on wiki sources to prevent cross site scripting attacks.
+
 ## License
 
 MIT
