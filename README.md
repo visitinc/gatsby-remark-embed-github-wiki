@@ -1,7 +1,7 @@
 # gatsby-remark-embed-github-wiki
 
-[![NPM badge](https://img.shields.io/npm/v/gatsby-remark-embed-gist.svg?style=flat-square)](https://www.npmjs.com/package/gatsby-remark-embed-gist)
-[![Travis badge](https://img.shields.io/travis/weirdpattern/gatsby-remark-embed-gist.svg?branch=master&style=flat-square)](https://travis-ci.org/weirdpattern/gatsby-remark-embed-gist)
+[![NPM badge](https://img.shields.io/npm/v/gatsby-remark-embed-github-wiki.svg?style=flat-square)](https://www.npmjs.com/package/gatsby-remark-embed-github-wiki)
+[![Travis badge](https://img.shields.io/travis/ptsteadman/gatsby-remark-embed-github-wiki.svg?branch=master&style=flat-square)](https://travis-ci.org/ptsteadman/gatsby-remark-embed-github-wiki)
 
 This plugin allows content authors to embed public GitHub wiki markdown.
 
@@ -11,20 +11,19 @@ To embed a GitHub wiki page in your markdown/remark content, simply add an inlin
 block using the `gh-wiki:` protocol.
 
 ```md
-`gh-wiki:[<username>/]<repo>[#<wiki_page>]`
+`gh-wiki:[<username>/repo/]<wiki_page>`
 ```
 
 Where:  
 - **username**, represents the github user or org to be accessed.  
 Can be defaulted via configuration.
 - **repo**, is the name of the repo to be accessed.   
-This is the hash value in the gist url, e.g. https://gist.github.com/<username\>/`ce54fdb1e5621b5966e146026995b974`).
 - **wiki_page**, is the name of of the wiki page, as specified in the URL bar:
   ex: `Index-Copy` for [this page](https://github.com/visitinc/visitinc.github.io/wiki/Index-Copy)
 
 ## Installation
 
-`yarn add gatsby-remark-embed-gist`
+`npm i gatsby-remark-embed-github-wiki`
 
 ## Usage
 
@@ -37,7 +36,7 @@ This is the hash value in the gist url, e.g. https://gist.github.com/<username\>
       {
         resolve: "gatsby-remark-embed-github-wiki",
         options: {
-          // Optional:
+          // Optional: (both must be specified)
           username: 'visitinc',
           repo: 'visitinc.github.io'
         }
