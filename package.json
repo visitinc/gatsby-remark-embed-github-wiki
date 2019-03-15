@@ -1,6 +1,6 @@
 {
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "name": "gatsby-remark-embed-github-wiki",
   "description": "Gatsby remark github wiki preprocessor for embedding wiki content",
   "author": {
